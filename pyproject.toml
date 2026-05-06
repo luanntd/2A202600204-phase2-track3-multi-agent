@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multi-agent-research-lab"
+version = "0.1.0"
+description = "Production-grade starter skeleton for a multi-agent research lab"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "VinUniversity AI Lab" }]
+dependencies = [
+  "pydantic>=2.7",
+  "pydantic-settings>=2.3",
+  "typer>=0.12",
+  "rich>=13.7",
+  "python-dotenv>=1.0",
+  "PyYAML>=6.0",
+  "tenacity>=8.3"
+]
+
+[project.optional-dependencies]
+llm = [
+  "openai>=1.40",
+  "langgraph>=0.2",
+  "langchain-core>=0.2",
+  "langsmith>=0.1"
+]
+dev = [
+  "pytest>=8.2",
+  "pytest-cov>=5.0",
+  "ruff>=0.5",
+  "mypy>=1.10",
+  "pre-commit>=3.7"
+]
+
+[project.scripts]
+malab = "multi_agent_research_lab.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+ignore = []
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+mypy_path = "src"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"

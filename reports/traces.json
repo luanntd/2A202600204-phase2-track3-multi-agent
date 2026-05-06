@@ -1,0 +1,248 @@
+{
+  "traces": {
+    "baseline": {
+      "q1": [
+        {
+          "name": "baseline_done",
+          "payload": {
+            "input_tokens": 68,
+            "output_tokens": 757,
+            "cost_usd": 0.00046439999999999996,
+            "latency_seconds": 9.706
+          }
+        }
+      ],
+      "q2": [
+        {
+          "name": "baseline_done",
+          "payload": {
+            "input_tokens": 63,
+            "output_tokens": 784,
+            "cost_usd": 0.00047985,
+            "latency_seconds": 11.727
+          }
+        }
+      ],
+      "q3": [
+        {
+          "name": "baseline_done",
+          "payload": {
+            "input_tokens": 63,
+            "output_tokens": 773,
+            "cost_usd": 0.00047325,
+            "latency_seconds": 13.073
+          }
+        }
+      ]
+    },
+    "multi_agent": {
+      "q1": [
+        {
+          "name": "supervisor_route",
+          "payload": {
+            "iteration": 0,
+            "next_route": "researcher",
+            "elapsed_seconds": 0.0,
+            "has_research": false,
+            "has_analysis": false,
+            "has_answer": false
+          }
+        },
+        {
+          "name": "researcher_done",
+          "payload": {
+            "sources": 5,
+            "tokens": 1885,
+            "latency_seconds": 11.328
+          }
+        },
+        {
+          "name": "supervisor_route",
+          "payload": {
+            "iteration": 1,
+            "next_route": "analyst",
+            "elapsed_seconds": 11.328,
+            "has_research": true,
+            "has_analysis": false,
+            "has_answer": false
+          }
+        },
+        {
+          "name": "analyst_done",
+          "payload": {
+            "tokens": 1109,
+            "latency_seconds": 5.14
+          }
+        },
+        {
+          "name": "supervisor_route",
+          "payload": {
+            "iteration": 2,
+            "next_route": "writer",
+            "elapsed_seconds": 16.468,
+            "has_research": true,
+            "has_analysis": true,
+            "has_answer": false
+          }
+        },
+        {
+          "name": "writer_done",
+          "payload": {
+            "answer_len": 4203,
+            "tokens": 1821,
+            "latency_seconds": 10.235
+          }
+        },
+        {
+          "name": "supervisor_route",
+          "payload": {
+            "iteration": 3,
+            "next_route": "done",
+            "elapsed_seconds": 26.703,
+            "has_research": true,
+            "has_analysis": true,
+            "has_answer": true
+          }
+        }
+      ],
+      "q2": [
+        {
+          "name": "supervisor_route",
+          "payload": {
+            "iteration": 0,
+            "next_route": "researcher",
+            "elapsed_seconds": 0.016,
+            "has_research": false,
+            "has_analysis": false,
+            "has_answer": false
+          }
+        },
+        {
+          "name": "researcher_done",
+          "payload": {
+            "sources": 5,
+            "tokens": 1466,
+            "latency_seconds": 8.171
+          }
+        },
+        {
+          "name": "supervisor_route",
+          "payload": {
+            "iteration": 1,
+            "next_route": "analyst",
+            "elapsed_seconds": 8.187,
+            "has_research": true,
+            "has_analysis": false,
+            "has_answer": false
+          }
+        },
+        {
+          "name": "analyst_done",
+          "payload": {
+            "tokens": 981,
+            "latency_seconds": 5.625
+          }
+        },
+        {
+          "name": "supervisor_route",
+          "payload": {
+            "iteration": 2,
+            "next_route": "writer",
+            "elapsed_seconds": 13.812,
+            "has_research": true,
+            "has_analysis": true,
+            "has_answer": false
+          }
+        },
+        {
+          "name": "writer_done",
+          "payload": {
+            "answer_len": 3261,
+            "tokens": 1506,
+            "latency_seconds": 7.313
+          }
+        },
+        {
+          "name": "supervisor_route",
+          "payload": {
+            "iteration": 3,
+            "next_route": "done",
+            "elapsed_seconds": 21.125,
+            "has_research": true,
+            "has_analysis": true,
+            "has_answer": true
+          }
+        }
+      ],
+      "q3": [
+        {
+          "name": "supervisor_route",
+          "payload": {
+            "iteration": 0,
+            "next_route": "researcher",
+            "elapsed_seconds": 0.016,
+            "has_research": false,
+            "has_analysis": false,
+            "has_answer": false
+          }
+        },
+        {
+          "name": "researcher_done",
+          "payload": {
+            "sources": 5,
+            "tokens": 2339,
+            "latency_seconds": 11.719
+          }
+        },
+        {
+          "name": "supervisor_route",
+          "payload": {
+            "iteration": 1,
+            "next_route": "analyst",
+            "elapsed_seconds": 11.735,
+            "has_research": true,
+            "has_analysis": false,
+            "has_answer": false
+          }
+        },
+        {
+          "name": "analyst_done",
+          "payload": {
+            "tokens": 1235,
+            "latency_seconds": 6.156
+          }
+        },
+        {
+          "name": "supervisor_route",
+          "payload": {
+            "iteration": 2,
+            "next_route": "writer",
+            "elapsed_seconds": 17.891,
+            "has_research": true,
+            "has_analysis": true,
+            "has_answer": false
+          }
+        },
+        {
+          "name": "writer_done",
+          "payload": {
+            "answer_len": 3440,
+            "tokens": 1855,
+            "latency_seconds": 9.312
+          }
+        },
+        {
+          "name": "supervisor_route",
+          "payload": {
+            "iteration": 3,
+            "next_route": "done",
+            "elapsed_seconds": 27.203,
+            "has_research": true,
+            "has_analysis": true,
+            "has_answer": true
+          }
+        }
+      ]
+    }
+  }
+}
