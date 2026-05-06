@@ -1,6 +1,6 @@
 """Benchmark report rendering — markdown table + analysis."""
 
-import re
+from typing import Any
 
 from multi_agent_research_lab.core.schemas import BenchmarkMetrics
 
@@ -11,7 +11,7 @@ def _count_citations(text: str) -> int:
 
 def render_markdown_report(
     metrics: list[BenchmarkMetrics],
-    traces: dict[str, list[dict]] | None = None,
+    traces: dict[str, list[dict[str, Any]] | None = None,
     answers: dict[str, str] | None = None,
 ) -> str:
     """Render benchmark metrics to a rich markdown report."""

@@ -2,6 +2,7 @@
 
 import logging
 from dataclasses import dataclass
+from typing import Any, TYPE_CHECKING
 
 from openai import APIError, APITimeoutError, BadRequestError, RateLimitError
 
@@ -62,7 +63,7 @@ class LLMClient:
     def complete(self, system_prompt: str, user_prompt: str) -> LLMResponse:
         """Call the LLM and return content + usage stats."""
         logger.debug("LLM call model=%s prompt_len=%d", self._model, len(user_prompt))
-        kwargs: dict = dict(
+        kwargs: dict[str, Any] = dict(
             model=self._model,
             timeout=self._timeout,
             messages=[

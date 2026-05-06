@@ -137,7 +137,7 @@ class MultiAgentWorkflow:
                 return "researcher"
             last = history[-1]
             if last == "done":
-                return END
+                return "done"
             return last
 
         builder: StateGraph = StateGraph(_GS)

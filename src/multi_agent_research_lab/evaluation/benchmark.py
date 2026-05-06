@@ -110,4 +110,4 @@ def run_benchmark(
         quality,
         citations,
     )
-    return state, metrics  # type: ignore[return-value]
+    return state, metrics
